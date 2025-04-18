@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #006AB6;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .hero {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center center;
+  }
+  
+  /* Navigation Section */
+  nav {
+    position: fixed;
+    top: 20px;
+    width: calc(100% - 40px); /* 20px margin on each side */
+    margin: 0 20px;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 25px 0;
+    z-index: 100;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 30px;
+    position: relative;
+  }
+  
+  .nav-links a {
+    position: relative;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 1rem;
+    padding-bottom: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Active underline */
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 0;
+    background-color: #000000;
+    transition: width 0.3s ease;
+  }
+  
+  /* Active and hover states */
+  .nav-links a:hover::after,
+  .nav-links a.active::after {
+    width: 100%;
+  }
+  
+  .nav-links a.active {
+    font-weight: bold;
+    color: #000000;
+  }
+  
+  .nav-inner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo-container {
+    position: absolute;
+    left: 40px;
+    display: flex;
+    align-items: center;
+  }
+  .logo-container img {
+    height: 100px;
+  }
+  .logo-container span {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 30px;
+  }
+  .nav-links a {
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover {
+    color: #0077cc;
+  }
+
+  /* Dropdown Section */
+  .dropdown {
+    position: relative;
+  }
+  
+  /* Dropdown button */
+  .dropbtn {
+    cursor: pointer;
+  }
+  
+  /* Dropdown content */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.7); 
+    min-width: 200px;
+    border-radius: 5px;
+    top: 200%;  
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    color: black;
+  }
+  
+  .dropdown.active .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  /* Program Container */
+  #programsContainer {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    padding: 30px;
+    width: 90%;
+    max-width: 1200px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    z-index: 50;
+    display: none;
+  }
+
+  .programs-container {
+    display: none;
+    margin: 100px auto 50px;
+    max-width: 1000px;
+    padding: 40px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .programs-container h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+  }
+  
+  .program-block {
+    margin-bottom: 30px;
+  }
+  
+  .program-block h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #1e1e1e;
+  }
+  
+  .program-block ul {
+    list-style: disc;
+    padding-left: 25px;
+  }
+
+  /* Sidebar Section */
+  .sidebar {
+    position: fixed;
+    top: 50%;
+    right: -400px;
+    width: 300px;
+    height: 500px;
+    background-color: #FDF100;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease;
+    z-index: 999;
+    padding: 30px 20px;
+    border-radius: 30px;
+    margin-right: 20px;
+    transform: translateY(-50%);
+  }
+  
+  .sidebar-content {
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .sidebar.active {
+    right: 0;
+  }
+
+  /* Sidebar content */
+  .sidebar-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .sidebar-title {
+    color: #3498db;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  
+  /* Sidebar buttons container */
+  .sidebar-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* Individual buttons */
+  .sidebar-btn {
+    font-weight: bold;
+    padding: 12px 80px;
+    background-color: #3498db;
+    border: none;
+    border-radius: 25px;
+    color: #FDF100;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sidebar-btn:hover {
+    background-color: #2980b9;
+  }
+  
+  .floating-btn {
+    position: fixed;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    width: 70px;
+    height: 70px;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+    cursor: pointer;
+    z-index: 1000;
+    transition: right 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .floating-btn img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+  }
+  
+  .sidebar.active + .floating-btn {
+    right: 320px;
+  }
+  
+  .floating-btn:hover {
+    background-color: #005fa3;
+    transform: translateY(-50%) scale(1.05);
+  }
+  
+  /* Bottom Curve Section */
+  .spacer {
+    height: 80px;
+  }
+  
+  .bottom-curve {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 150px;
+    background: rgba(255,255,255,0.7);
+    border-top-left-radius: 100% 400px;
+    border-top-right-radius: 100% 400px;
+  }
+  

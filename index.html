@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>STI Malolos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="hero">
+    <img src="images/image_bg.png"
+         alt="Background image">
+  </div>
+
+  <nav>
+    <div class="nav-inner">
+      <div class="logo-container">
+        <img src="images/STI_logo.png" />
+        <span>STI Malolos</span>
+      </div>
+      <div class="nav-links">
+        <a href="#" class="active">Home</a>
+        <!-- Dropdown for Categories -->
+        <div class="dropdown">
+          <a href="#" class="dropbtn">Categories</a>
+          <div class="dropdown-content">
+            <a href="#" id="collegeProgramsBtn">College Programs</a>
+            <a href="#" id="shsProgramsBtn">Senior High School</a>
+          </div>          
+        </div>
+        <a href="#">Virtual Tour</a>
+      </div>      
+    </div>
+  </nav>  
+
+  <div id="programsContainer" class="programs-container">
+    <h2 id="programTitle">Program Title</h2>
+    <div id="programContent" class="program-content">
+    </div>
+  </div>  
+
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-content">
+      <h2 class="sidebar-title">FLOOR</h2>
+      <div class="sidebar-buttons">
+        <button class="sidebar-btn">BASEMENT</button>
+        <button class="sidebar-btn">FLR 1</button>
+        <button class="sidebar-btn">FLR 2</button>
+        <button class="sidebar-btn">FLR 3</button>
+        <button class="sidebar-btn">FLR 4</button>
+        <button class="sidebar-btn">FLR 5</button>
+      </div>
+    </div>
+  </div>
+  
+  <button class="floating-btn" id="toggleSidebarBtn">
+    <img src="images/button1.png" alt="Arrow" />
+  </button>
+
+  <div class="spacer"></div>
+
+  <div class="bottom-curve"></div>
+  <script src="/script/app.js"></script>
+</body>
+</html>
