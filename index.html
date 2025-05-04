@@ -4,10 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>STI Malolos</title>
+
+  <link rel="icon" type="image/png" href="images/STI_logo.png" />
+
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+
   <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+  
 </head>
 <body>
   <div class="hero">
@@ -35,7 +40,14 @@
         <a href="#" id="virtualTourBtn">Virtual Tour</a>
       </div>  
       
-      <a href="#" class="contact-link">Contact Us</a>    
+      <div class="dropdown" id="contactDropdown">
+        <a href="#" class="contact-link dropbtn">Contact Us</a>
+        <div class="dropdown-content">
+          <a href="mailto:info@stimalolos.edu.ph">Email Us</a>
+          <a href="tel:+1234567890">Call Us</a>
+          <a href="/contact-form.html">Contact Form</a>
+        </div>
+      </div>
     </div>
   </nav>  
 
@@ -63,16 +75,20 @@
       <div class="vt-pickers">
         <label for="locationSelect">Location:</label>
         <select id="locationSelect">
+          <option value="basement">Basement</option>
           <option value="lobby">Lobby</option>
-          <option value="gym">Gym</option>
           <option value="floor2">Floor 2</option>
+          <option value="floor3">Floor 3</option>
+          <option value="floor4">Floor 4</option>
+          <option value="gym">Gym</option>
+
         </select>
 
         <label for="sceneSelect">View:</label>
         <select id="sceneSelect"></select>
       </div>
 
-      <div id="streetViewPanorama" style="width:100%; height:calc(100% - 60px);"></div>
+      <div id="streetViewPanorama" style="width:100%; height:100%"></div>
     </div>
   </div>
 
@@ -97,6 +113,7 @@
   <div class="spacer"></div>
 
   <div class="bottom-curve"></div>
+
   <script src="/script/app.js"></script>
   <script src="/script/sidebar-funtion.js"></script>
   <script src="/script/virtualTour-function.js"></script>

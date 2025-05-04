@@ -8,6 +8,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const dropdownBtn = document.querySelector(".dropbtn");
   const dropdownContent = document.querySelector(".dropdown-content");
 
+  const contactDropdown = document.getElementById("contactDropdown");
+  const contactBtn      = contactDropdown.querySelector(".dropbtn");
+  const contactContent  = contactDropdown.querySelector(".dropdown-content");
+
   const programsContainer = document.getElementById("programsContainer");
   const programTitle = document.getElementById("programTitle");
   const programContent = document.getElementById("programContent");
@@ -53,6 +57,26 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             dropdownContent.style.display = "none";
         }
+    });
+
+      contactBtn.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        contactDropdown.classList.toggle("active");
+        closeDropdowns(contactBtn);
+
+        if (contactDropdown.classList.contains("active")) {
+          contactContent.style.display = "block";
+        } else {
+          contactContent.style.display = "none";
+        }
+    });
+
+    // 10) Click outside to close dropdowns
+    document.addEventListener('click', e => {
+      if (!e.target.closest('.dropdown') && !e.target.closest('.dropbtn')) {
+        closeDropdowns();
+      }
     });
 
     // Show College Programs

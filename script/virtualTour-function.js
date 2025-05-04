@@ -7,185 +7,327 @@ document.addEventListener("DOMContentLoaded", () => {
   let viewer;
 
   const locations = {
-    // Lobby
-    lobby: [
-      { id: 'lobbyMain', title: 'Main Lobby View', panorama: '../routes/lobby/1.jpg',
+    // BASEMENT
+    basement: [
+      {
+        id: 'basement', title: 'Basement View', panorama: '../routes/basement/Parking.jpg',
         hotSpots: [
-          {
-            pitch:  -5,
-            yaw:   250,
-            type:   'info',
-            text:   'Reception Desk',
-          },
-          {
-            pitch:   -5,
-            yaw:   -43,
-            type:    'scene',
-            text:    'Go to Left Lobby Corner',
-            sceneId: 'lobbyLeftCorner',
-            cssClass:'arrow-left',
-            targetYaw:   'same',
-            targetPitch: 'same',
-            targetHfov:  'same'
-          },
-          {
-            pitch:   -5,
-            yaw:    35,
-            type:    'scene',
-            text:    'Go to Right Lobby Corner',
-            sceneId: 'lobbyRightCorner',
-            cssClass:'arrow-right',
-            targetYaw:   'same',
-            targetPitch: 'same',
-            targetHfov:  'same'
-          },
+          { pitch: -5, yaw: -10, type: 'scene', text: 'Go to Canteen', sceneId: 'canteenEntranceBasement', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch: 10, yaw: 215, type: 'scene', text: 'Go to Lobby', sceneId: 'lobbyMain', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
         ]
       },
-      {id: 'lobbyLeftCorner', title: 'Lobby Left Corner View', panorama: '../routes/lobby/2.jpg',
+      {
+        id: 'canteenEntranceBasement', title: 'Canteen Entrance', panorama: '../routes/basement/Canteen 1.jpg',
         hotSpots: [
-          {
-            pitch:   -10,
-            yaw:     80,
-            type:    'scene',
-            text:    'Back to Main Lobby',
-            sceneId: 'lobbyMain',
-            cssClass:'arrow-right',
-            targetYaw:   'same',
-            targetPitch: 'same',
-            targetHfov:  'same'
-          }
-        ]
-      },
-      { id: 'lobbyRightCorner', title: 'Lobby Right Corner View', panorama: '../routes/lobby/3.jpg',
-        hotSpots: [
-          {
-            pitch:   -5,
-            yaw:     264,
-            type:    'scene',
-            text:    'Back to Main Lobby',
-            sceneId: 'lobbyMain',
-            cssClass:'arrow-left',
-            targetYaw:   'same',
-            targetPitch: 'same',
-            targetHfov:  'same'
-          },
-          {
-            pitch:   -5,
-            yaw:     -70,
-            type:    'scene',
-            text:    'Go to Hallway',
-            sceneId: 'hallway',
-            cssClass:'arrow-right',
-            targetYaw:   'same',
-            targetPitch: 'same',
-            targetHfov:  'same'
-          }
-        ]
-      },
-      { id: 'hallway', title: 'Hallway View', panorama: '../routes/lobby/4.jpg',
-        hotSpots: [
-          {
-            pitch:   -5,
-            yaw:     275,
-            type:    'scene',
-            text:    'Back to Main Lobby',
-            sceneId: 'lobbyMain',
-            cssClass:'arrow-right',
-            targetYaw:   'same',
-            targetPitch: 'same',
-            targetHfov:  'same'
-          }
-        ]
-      },
-      { id: 'computerLab', title: 'Computer Laboratory View', panorama: '../routes/lobby/computerLab.jpg' },
-
-    ],
-
-    // Gym
-    gym: [
-      { id: 'gymEntrance', title: 'Gym Entrance', panorama: '../routes/gym/1.jpg',
-        hotSpots: [
-          {
-            pitch:  10,
-            yaw:   -20,
-            type:   'info',
-            text:   'Check-in Desk',
-          },
-          {
-            pitch:   0,
-            yaw:   120,
-            type:    'scene',
-            text:    'Go to Gym Center',
-            sceneId: 'gymCenter',
-            targetYaw:   'same',
-            targetPitch: 'same',
-            targetHfov:  'same'
-          }
-        ]
-      },
-      { id: 'gymCenter', title: 'Gym Center Floor', panorama: '../routes/gym/center.jpg',
-        hotSpots: [
-          {
-            pitch:   -5,
-            yaw:     90,
-            type:    'scene',
-            text:    'Back to Entrance',
-            sceneId: 'gymEntrance',
-            targetYaw:   'same',
-            targetPitch: 'same',
-            targetHfov:  'same'
-          }
+          { pitch: -5, yaw: 70, type: 'scene', text: 'Go Back', sceneId: 'basement', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
         ]
       }
     ],
 
-    // Floor 2
+    // LOBBY
+    lobby: [
+      {
+        id: 'lobbyMain', title: 'Main Lobby View', panorama: '../routes/lobby/1.jpg',
+        hotSpots: [
+          { pitch: -5, yaw: 250, type: 'info', text: 'Reception Desk' },
+          { pitch: -3, yaw: 190, type: 'scene', text: 'Go to Basement', sceneId: 'basement', cssClass:'arrow-down', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch: -5, yaw: -43, type: 'scene', text: 'Go to Left Corner', sceneId: 'lobbyLeftCorner', cssClass:'arrow-left', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch: -5, yaw: 35,  type: 'scene', text: 'Go to Right Corner', sceneId: 'lobbyRightCorner', cssClass:'arrow-right', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+      {
+        id: 'lobbyLeftCorner', title: 'Lobby Left Corner', panorama: '../routes/lobby/2.jpg',
+        hotSpots: [
+          { pitch: 12, yaw: 175, type: 'scene', text:'Go to Floor 2 Stairs', sceneId:'floor2Stairs', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch:-10, yaw: 80,  type: 'scene', text:'Back to Lobby', sceneId:'lobbyMain', cssClass:'arrow-right', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+      {
+        id: 'lobbyRightCorner', title: 'Lobby Right Corner', panorama: '../routes/lobby/3.jpg',
+        hotSpots: [
+          { pitch: 25, yaw: 180, type: 'info', text: 'Computer Laboratory 1\nTotal Computers: N/A' },
+          { pitch:-5, yaw:264, type:'scene', text:'Back to Lobby', sceneId:'lobbyMain', cssClass:'arrow-left', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch:-5, yaw:-70,type:'scene', text:'Go to Hallway', sceneId:'hallway', cssClass:'arrow-right', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch:0, yaw:180,type:'scene', text:'Go to Computer Laboratory', sceneId:'computerLab', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+      {
+        id: 'hallway', title: 'Hallway View', panorama: '../routes/lobby/4.jpg',
+        hotSpots: [
+          { pitch:-5, yaw:275, type:'scene', text:'Back to Lobby', sceneId:'lobbyMain', cssClass:'arrow-right', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+      { 
+        id: 'computerLab', title: 'Computer Lab', panorama: '../routes/lobby/computerLab.jpg',
+        hotSpots: [
+          { pitch:0, yaw:0,type:'scene', text:'Exit', sceneId:'lobbyRightCorner', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+      {
+        id: 'floor2Stairs', title: 'Floor 2 Stairs', panorama: '../routes/lobby/stairs to floor 2/1.jpg',
+        hotSpots: [
+          { pitch:5, yaw:375, type:'scene', text:'Go Up', sceneId:'floor2', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch:-23, yaw:350, type:'scene', text:'Go Down', sceneId:'lobbyLeftCorner', cssClass:'arrow-down', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+    ],
+
+    // FLOOR 2
     floor2: [
-      { id: 'floor2Hall', title: 'Floor 2 Hall', panorama: '../routes/floor 2/1.jpg',
+      {
+        id: 'floor2', title: 'Floor 2 View', panorama: '../routes/lobby/stairs to floor 2/2.jpg',
         hotSpots: [
-          {
-            pitch:   0,
-            yaw:     45,
-            type:    'scene',
-            text:    'Go to Office',
-            sceneId: 'floor2Office',
-            targetYaw:   'same',
-            targetPitch: 'same',
-            targetHfov:  'same'
-          }
+          { pitch:-15, yaw:260, type:'scene', text:'Go to Floor 2 Main Hallway', sceneId:'floor2Hall', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch:-30, yaw:345, type:'scene', text:'Go to Floor 2 Stairs', sceneId:'floor2Stairs', cssClass:'arrow-down', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch: 10, yaw:375, type:'scene', text:'Go to Floor 3 Stairs', sceneId:'floor3Stairs', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
         ]
       },
-      { id: 'floor2Office', title: 'Floor 2 Office', panorama: '../routes/floor 2/2.jpg',
+      {
+        id: 'floor2Hall', title: 'Floor 2 Hallway', panorama: '../routes/floor 2/1.jpg',
         hotSpots: [
-          {
-            pitch:   0,
-            yaw:    -90,
-            type:    'scene',
-            text:    'Back to Hall',
-            sceneId: 'floor3Hall',
-            targetYaw:   'same',
-            targetPitch: 'same',
-            targetHfov:  'same'
-          }
+          { pitch:0, yaw:175, type:'scene', text:'Corridor', sceneId:'Corridor', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch:0, yaw:155, type:'scene', text:'Go Left', sceneId:'Hallway', cssClass:'arrow-left', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch:0, yaw:0,   type:'scene', text:'Back to Stairs', sceneId:'floor2', cssClass:'arrow-left', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
         ]
       },
-      { id: 'floor3Hall', title: 'Floor 2 Hall', panorama: '../routes/floor 2/3.jpg',
+      {
+        id: 'Corridor', title: 'Floor 2 Corridor', panorama: '../routes/floor 2/3.jpg',
         hotSpots: [
-          {
-            pitch:   0,
-            yaw:     45,
-            type:    'scene',
-            text:    'Go to Office',
-            sceneId: 'floor2Office',
-            targetYaw:   'same',
-            targetPitch: 'same',
-            targetHfov:  'same'
-          }
+          { pitch:-3, yaw:-93, type:'scene', text:'Back to Hall', sceneId:'floor2Hall', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch:-3, yaw:-80, type:'scene', text:'Go Right', sceneId:'Hallway', cssClass:'arrow-right', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
         ]
       },
+      {
+        id: 'Hallway', title: 'Floor 2 Hallway Part 2', panorama: '../routes/floor 2/4.jpg',
+        hotSpots: [
+          { pitch:-5, yaw:-85, type:'scene', text:'Back to Hall', sceneId:'floor2Hall', cssClass:'arrow-right', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch:-3, yaw:85, type:'scene', text:'Another Corridor', sceneId:'anotherHallway', cssClass:'arrow-left', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+      {
+        id: 'anotherHallway', title: 'Another Corridor', panorama: '../routes/floor 2/5.jpg',
+        hotSpots: [
+          { pitch:-5, yaw:-80, type:'scene', text:'Back to Hallway', sceneId:'Hallway', cssClass:'arrow-right', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+      {
+        id: 'floor3Stairs', title: 'Floor 3 Stairs', panorama: '../routes/floor 2/stairs to floor 3/STAIR 1.jpg',
+        hotSpots: [
+          { pitch:8, yaw: 377, type:'scene', text:'Go Up', sceneId:'floor3', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch:-25, yaw: 347, type:'scene', text:'Go Down', sceneId:'floor2', cssClass:'arrow-down', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+    ],
+
+    // FLOOR 3
+    floor3: [
+      {
+        id: 'floor3', title: 'Floor 3 View', panorama: '../routes/floor 3/1.jpg',
+        hotSpots: [
+          { pitch:-9, yaw:76, type:'scene', text:'Go Down', sceneId:'floor3Stairs', cssClass:'arrow-down', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch:1, yaw:78, type:'scene', text:'Go Up', sceneId:'floor4Stairs', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch:-20, yaw:-85, type:'scene', text:'Go to Middle Hallway', sceneId:'floor3MiddleHallway', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+      {
+        id: 'floor3MiddleHallway', title: 'Floor 3 Middle Hallway', panorama: '../routes/floor 3/3.jpg',
+        hotSpots: [
+          { pitch:-10, yaw:-83, type:'scene', text:'Go to Left Hallway', sceneId:'floor3LeftHallway', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch:-20, yaw: 187, type:'scene', text:'Back to Floor 3 Landing', sceneId:'floor3', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch: 8, yaw: 293, type: 'info', text: 'Room 303' },
+          { pitch: 0, yaw: 293, type:'scene', text:'Go to Room 303', sceneId:'Room303', cssClass:'arrow-right', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch: 9, yaw: 255, type: 'info', text: 'Room 304' },
+          { pitch: 0, yaw:255, type:'scene', text:'Go to Room 304', sceneId:'Room304', cssClass:'arrow-left', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch: 35, yaw: 380, type: 'info', text: 'Room 305' },
+          { pitch: 0, yaw:380, type:'scene', text:'Go to Room 305', sceneId:'Room305', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+      {
+        id: 'floor3LeftHallway', title: 'Floor 3 Left Hallway', panorama: '../routes/floor 3/2.jpg',
+        hotSpots: [
+          { pitch: 35, yaw: 72, type: 'info', text: 'Room 301' },
+          { pitch:10, yaw:72, type:'scene', text:'Go to Room 301', sceneId:'Room301', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch:-9, yaw:173, type:'scene', text:'Go to Middle Hallway', sceneId:'floor3MiddleHallway', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+      {
+        id: 'Room301', title: 'Room 301', panorama: '../routes/floor 3/301.jpg',
+        hotSpots: [
+          { pitch:-5, yaw:98, type:'scene', text:'Exit', sceneId:'floor3LeftHallway', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+      {
+        id: 'Room303', title: 'Room 303', panorama: '../routes/floor 3/303.jpg',
+        hotSpots: [
+          { pitch:-5, yaw:98, type:'scene', text:'Exit', sceneId:'floor3MiddleHallway', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+      {
+        id: 'Room304', title: 'Room 304', panorama: '../routes/floor 3/304.jpg',
+        hotSpots: [
+          { pitch:-5, yaw:-8, type:'scene', text:'Exit', sceneId:'floor3MiddleHallway', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+      {
+        id: 'Room305', title: 'Room 305', panorama: '../routes/floor 3/305.jpg',
+        hotSpots: [
+          { pitch:-5, yaw:-8, type:'scene', text:'Exit', sceneId:'floor3MiddleHallway', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+      {
+        id: 'Room306', title: 'Room 306', panorama: '../routes/floor 3/306.jpg',
+        hotSpots: [
+          { pitch:-5, yaw:-35, type:'scene', text:'Exit', sceneId:'floor3MiddleHallway', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+      {
+        id: 'Room307', title: 'Room 307', panorama: '../routes/floor 3/307.jpg',
+        hotSpots: [
+          { pitch:-5, yaw:150, type:'scene', text:'Exit', sceneId:'floor3MiddleHallway', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+      {
+        id: 'Room309', title: 'Room 309', panorama: '../routes/floor 3/309.jpg',
+        hotSpots: [
+          { pitch:-5, yaw:-50, type:'scene', text:'Exit', sceneId:'floor3MiddleHallway', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+      {
+        id: 'floor4Stairs', title: 'Floor 4 Stairs', panorama: '../routes/floor 3/stairs to floor 4/STAIR 1.jpg',
+        hotSpots: [
+          { pitch:8, yaw: 377, type:'scene', text:'Go Up', sceneId:'floor4', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch:-25, yaw: 347, type:'scene', text:'Go Down', sceneId:'floor3', cssClass:'arrow-down', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+    ],
+
+    // FLOOR 4
+    floor4: [
+      {
+        id: 'floor4', title: 'Floor 4 View', panorama: '../routes/floor 3/stairs to floor 4/STAIR 2.jpg',
+        hotSpots: [
+          { pitch:8, yaw: 377, type:'scene', text:'Go to Gym Stairs', sceneId:'gymStairs', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch:-25, yaw: 347, type:'scene', text:'Go Down', sceneId:'floor4Stairs', cssClass:'arrow-down', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch:-15, yaw: 180, type:'scene', text:'Go to Main Hallway', sceneId:'floor4MainHallway', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+      {
+        id: 'floor4MainHallway', title: 'Floor 4 Main Hallway', panorama: '../routes/floor 4/1.jpg',
+        hotSpots: [
+          { pitch:-30, yaw:75, type:'scene', text:'Go Back', sceneId:'floor4', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch:-10, yaw:0, type:'scene', text:'Go to Hallway', sceneId:'floor4MiddleHallway', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+      {
+        id: 'floor4MiddleHallway', title: 'Floor 4 Middle Hallway', panorama: '../routes/floor 4/2.jpg',
+        hotSpots: [
+          { pitch:-10, yaw:5, type:'scene', text:'Go Back to Main Hallway', sceneId:'floor4MainHallway', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch:-5, yaw:95, type:'scene', text:'Go to Left Hallway', sceneId:'floor4LeftHallway', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch:-10, yaw:-80, type:'scene', text:'Go to Right Hallway', sceneId:'floor4RightHallway', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch: 10, yaw: -47, type: 'info', text: 'Aquarium' },
+          { pitch:-10, yaw:-47, type:'scene', text:'Go to Aquarium', sceneId:'Aquarium', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch: 10, yaw: 30, type: 'info', text: 'Speech Laboratory' },
+          { pitch:-10, yaw:30, type:'scene', text:'Go to Speech Lab', sceneId:'SpeechLab', cssClass:'arrow-right', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch: 35, yaw: 200, type: 'info', text: 'Computer Laboratory 3' },
+          { pitch: 0, yaw:200, type:'scene', text:'Go to Com Lab 3', sceneId:'ComLab3', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+      {
+        id: 'floor4LeftHallway', title: 'Floor 4 Left Hallway', panorama: '../routes/floor 4/4.jpg',
+        hotSpots: [
+          { pitch:-12, yaw:-86, type:'scene', text:'Go Back to Middle Hallway', sceneId:'floor4MiddleHallway', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+        ]
+      },
+      {
+        id: 'floor4RightHallway', title: 'Floor 4 Right Hallway', panorama: '../routes/floor 4/3.jpg',
+        hotSpots: [
+          { pitch:-10, yaw:205, type:'scene', text:'Go Back to Middle Hallway', sceneId:'floor4MiddleHallway', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch: 20, yaw: 50, type: 'info', text: 'Room 402' },
+          { pitch:-5, yaw:51, type:'scene', text:'Go to Room 402', sceneId:'Room402', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+      {
+        id: 'Room401', title: 'Room 401', panorama: '../routes/floor 4/401.jpg',
+        hotSpots: [
+          { pitch:-5, yaw:80, type:'scene', text:'Exit', sceneId:'floor4MiddleHallway', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+      {
+        id: 'Room402', title: 'Room 402', panorama: '../routes/floor 4/402.jpg',
+        hotSpots: [
+          { pitch:-5, yaw:-150, type:'scene', text:'Exit', sceneId:'floor4RightHallway', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+      {
+        id: 'Room403', title: 'Room 403', panorama: '../routes/floor 4/403.jpg',
+        hotSpots: [
+          { pitch:-5, yaw:160, type:'scene', text:'Exit', sceneId:'floor4MiddleHallway', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+      {
+        id: 'Room405-407', title: 'Room 405 to 407', panorama: '../routes/floor 4/405-407.jpg',
+        hotSpots: [
+          { pitch:-5, yaw:-140, type:'scene', text:'Exit', sceneId:'floor4MiddleHallway', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+      {
+        id: 'Aquarium', title: 'AQUARIUM', panorama: '../routes/floor 4/AQUARIUM.jpg',
+        hotSpots: [
+          { pitch:-5, yaw:-150, type:'scene', text:'Exit', sceneId:'floor4MiddleHallway', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+      {
+        id: 'SpeechLab', title: 'SPEECH LABORATORY', panorama: '../routes/floor 4/SPEECH LAB.jpg',
+        hotSpots: [
+          { pitch:-2, yaw:120, type:'scene', text:'Exit', sceneId:'floor4MiddleHallway', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+      {
+        id: 'ComLab3', title: 'Computer Laboratory 3', panorama: '../routes/floor 4/COM_LAB 3.jpg',
+        hotSpots: [
+          { pitch:-5, yaw:-30, type:'scene', text:'Exit', sceneId:'floor4MiddleHallway', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+      {
+        id: 'gymStairs', title: 'Gym Stairs', panorama: '../routes/floor 4/stairs to gym/STAIR 1.jpg',
+        hotSpots: [
+          { pitch:8, yaw: 377, type:'scene', text:'Go Up', sceneId:'gymEntrance', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch:-25, yaw: 347, type:'scene', text:'Go Down', sceneId:'floor4', cssClass:'arrow-down', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+    ],
+
+    // GYM
+    gym: [
+      {
+        id: 'gymEntrance', title: 'Gym Entrance', panorama: '../routes/gym/1.jpg',
+        hotSpots: [
+          { pitch:-5, yaw:230, type:'scene', text:'Go to Gym Center', sceneId:'gymCenter', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch:-33, yaw: 333, type:'scene', text:'Go Down', sceneId:'gymStairs', cssClass:'arrow-down', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+      {
+        id: 'gymCenter', title: 'Gym Center', panorama: '../routes/gym/2.jpg',
+        hotSpots: [
+          { pitch:-5, yaw:263, type:'scene', text:'Back to Gym Entrance', sceneId:'gymEntrance', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch:13, yaw:280, type:'scene', text:'Go to Elevated Bleacher', sceneId:'elevatedBleacher', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+      {
+        id: 'elevatedBleacher', title: 'Elevated Bleacher', panorama: '../routes/gym/3.jpg',
+        hotSpots: [
+          { pitch:-23, yaw:-8, type:'scene', text:'Back to Gym Center', sceneId:'gymCenter', cssClass:'arrow-down', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      }
     ]
   };
   
+  const sceneToLocation = {};
+  Object.entries(locations).forEach(([locKey, scenes]) => {
+    scenes.forEach(sc => {
+      sceneToLocation[sc.id] = locKey;
+    });
+  });
 
   // Populate scene based on the current location
   function populateScenes(locationKey) {
@@ -247,6 +389,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Initialize Pannellum
       viewer = pannellum.viewer('streetViewPanorama', pannellumConfig);
+
+      viewer.on('scenechange', () => {
+        const current = viewer.getScene();
+        const locKey  = sceneToLocation[current]; 
+
+        if (locationSelect.value !== locKey) {
+          locationSelect.value = locKey;
+          populateScenes(locKey);
+        }
+
+        sceneSelect.value = current;
+      });
+
       vtPanel._loaded = true;
     }
   });
