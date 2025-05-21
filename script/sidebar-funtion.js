@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
         currentBtn = btn;
   
         // Set the panel content
-        const level = btn.textContent.trim().toLowerCase();
+        const level = btn.textContent.trim().toUpperCase();
         titleEl.textContent = btn.textContent.trim();
         imgEl.src = `images/maps/${level}.png`;
         imgEl.alt = `${btn.textContent.trim()} map`;
