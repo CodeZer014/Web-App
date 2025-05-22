@@ -63,20 +63,13 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault();
 
         contactDropdown.classList.toggle("active");
-        closeDropdowns(contactBtn);
+
 
         if (contactDropdown.classList.contains("active")) {
           contactContent.style.display = "block";
         } else {
           contactContent.style.display = "none";
         }
-    });
-
-    // 10) Click outside to close dropdowns
-    document.addEventListener('click', e => {
-      if (!e.target.closest('.dropdown') && !e.target.closest('.dropbtn')) {
-        closeDropdowns();
-      }
     });
 
     // Show College Programs

@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
 
   <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
-  
 </head>
 <body>
   <div class="hero">
@@ -43,21 +42,13 @@
       <div class="dropdown" id="contactDropdown">
         <a href="#" class="contact-link dropbtn">Contact Us</a>
         <div class="dropdown-content">
-          <span>Location: McArthur Highway, Dakila, Malolos, Philippines</span>
-          <span>Contact Number: (044) 791 3451</span>
+          <span>Location: McArthur Highway, Dakila,
+            Malolos, Philippines</span>
+          <span>Number: (044) 791 3451</span>
         </div>
       </div>
     </div>
   </nav>  
-
-  <!-- Map Panel (initially hidden) -->
-  <div id="mapPanel" class="map-panel">
-    <div class="map-panel-arrow"></div>
-      <div class="map-panel-content">
-        <h3 id="mapPanelTitle">Title</h3>
-        <img id="mapPanelImage" src="" alt="Map layout" />
-      </div>
-    </div>
 
   <div id="programsContainer" class="programs-container">
     <h2 id="programTitle">Program Title</h2>
@@ -90,6 +81,16 @@
       <div id="streetViewPanorama" style="width:100%; height:100%"></div>
     </div>
   </div>
+
+    <!-- Map Panel (initially hidden) -->
+    <div id="mapPanel" class="map-panel">
+      <div class="map-panel-arrow"></div>
+        <div class="map-panel-content">
+          <h3 id="mapPanelTitle">Title</h3>
+          <img id="mapPanelImage" src="" alt="Map layout" />
+          <div id="mapHotspotsContainer" style="position:absolute; top:0; left:0; width:100%; height:100%;"></div>
+        </div>
+      </div>
 
   <div class="sidebar" id="sidebar">
     <div class="sidebar-content">

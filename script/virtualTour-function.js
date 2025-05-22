@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ]
       },
       {
-        id: 'canteenEntranceBasement', title: 'Canteen Entrance', panorama: '../routes/basement/Canteen 1.jpg',
+        id: 'canteenEntranceBasement', title: 'Canteen Entrance', panorama: '../routes/basement/Canteen_1.jpg',
         hotSpots: [
           { pitch: -5, yaw: 70, type: 'scene', text: 'Go Back', sceneId: 'basement', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
         ]
@@ -45,22 +45,37 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         id: 'lobbyRightCorner', title: 'Lobby Right Corner', panorama: '../routes/lobby/3.jpg',
         hotSpots: [
-          { pitch: 25, yaw: 180, type: 'info', text: 'Computer Laboratory 1\nTotal Computers: N/A' },
           { pitch:-5, yaw:264, type:'scene', text:'Back to Lobby', sceneId:'lobbyMain', cssClass:'arrow-left', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
           { pitch:-5, yaw:-70,type:'scene', text:'Go to Hallway', sceneId:'hallway', cssClass:'arrow-right', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
-          { pitch:0, yaw:180,type:'scene', text:'Go to Computer Laboratory', sceneId:'computerLab', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+          { pitch: 25, yaw: 180, type: 'info', text: 'Computer Laboratory 1\nTotal Computers: 40 PC' },
+          { pitch:0, yaw:180,type:'scene', text:'Go to Computer Laboratory 1', sceneId:'computerLab1', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch: 20, yaw: 125, type: 'info', text: 'Computer Laboratory 2\nTotal Computers: 40 PC\n Instructor: Sir James' },
+          { pitch:0, yaw:125,type:'scene', text:'Go to Computer Laboratory 2', sceneId:'computerLab2', cssClass:'arrow-right', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
         ]
       },
       {
         id: 'hallway', title: 'Hallway View', panorama: '../routes/lobby/4.jpg',
         hotSpots: [
-          { pitch:-5, yaw:275, type:'scene', text:'Back to Lobby', sceneId:'lobbyMain', cssClass:'arrow-right', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+          { pitch:-5, yaw:275, type:'scene', text:'Back to Lobby', sceneId:'lobbyMain', cssClass:'arrow-right', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch:-5, yaw:-255, type:'scene', text:'Go to Kitchen', sceneId:'kitchen', cssClass:'arrow-right', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+      {
+        id: 'kitchen', title: 'Kitchen View', panorama: '../routes/lobby/kitchen.jpg',
+        hotSpots: [
+          { pitch:-5, yaw:140, type:'scene', text:'Back to Hallway', sceneId:'hallway', cssClass:'arrow-left', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
         ]
       },
       { 
-        id: 'computerLab', title: 'Computer Lab', panorama: '../routes/lobby/computerLab.jpg',
+        id: 'computerLab1', title: 'Computer Lab 1', panorama: '../routes/lobby/computerLab.jpg',
         hotSpots: [
           { pitch:0, yaw:0,type:'scene', text:'Exit', sceneId:'lobbyRightCorner', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+      { 
+        id: 'computerLab2', title: 'Computer Lab 2', panorama: '../routes/lobby/computerLab2.jpg',
+        hotSpots: [
+          { pitch:0, yaw:180,type:'scene', text:'Exit', sceneId:'lobbyRightCorner', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
         ]
       },
       {
@@ -87,6 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
         hotSpots: [
           { pitch:0, yaw:175, type:'scene', text:'Corridor', sceneId:'Corridor', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
           { pitch:0, yaw:155, type:'scene', text:'Go Left', sceneId:'Hallway', cssClass:'arrow-left', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch:0, yaw:84, type:'scene', text:'Go to Clinic', sceneId:'clinic', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
           { pitch:0, yaw:0,   type:'scene', text:'Back to Stairs', sceneId:'floor2', cssClass:'arrow-left', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
         ]
       },
@@ -94,20 +110,50 @@ document.addEventListener("DOMContentLoaded", () => {
         id: 'Corridor', title: 'Floor 2 Corridor', panorama: '../routes/floor 2/3.jpg',
         hotSpots: [
           { pitch:-3, yaw:-93, type:'scene', text:'Back to Hall', sceneId:'floor2Hall', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
-          { pitch:-3, yaw:-80, type:'scene', text:'Go Right', sceneId:'Hallway', cssClass:'arrow-right', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+          { pitch:-3, yaw:-80, type:'scene', text:'Go Right', sceneId:'Hallway', cssClass:'arrow-right', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch: 8, yaw: -70, type: 'info', text: 'AVR\n40 Students Capacity\nProjector\nWhite Board' },
+          { pitch:3, yaw:-70, type:'scene', text:'Go to AVR', sceneId:'AVR', cssClass:'arrow-right', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch: 10, yaw: -130, type: 'info', text: 'Library\n40 Students Capacity\n White Board\nProjector\nBooks' },
+          { pitch:-3, yaw:-130, type:'scene', text:'Go to Library', sceneId:'library', cssClass:'arrow-left', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
         ]
       },
       {
         id: 'Hallway', title: 'Floor 2 Hallway Part 2', panorama: '../routes/floor 2/4.jpg',
         hotSpots: [
           { pitch:-5, yaw:-85, type:'scene', text:'Back to Hall', sceneId:'floor2Hall', cssClass:'arrow-right', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
-          { pitch:-3, yaw:85, type:'scene', text:'Another Corridor', sceneId:'anotherHallway', cssClass:'arrow-left', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+          { pitch:-3, yaw:85, type:'scene', text:'Another Corridor', sceneId:'anotherHallway', cssClass:'arrow-left', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
+          { pitch: 8, yaw:112, type: 'info', text: 'Mock Hotel\nbeds, mirror, cabinet, tables, and shelve' },
+          { pitch:-3, yaw:112, type:'scene', text:'Go to Mock Hotel', sceneId:'mockHotel', cssClass:'arrow-right', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
         ]
       },
       {
         id: 'anotherHallway', title: 'Another Corridor', panorama: '../routes/floor 2/5.jpg',
         hotSpots: [
           { pitch:-5, yaw:-80, type:'scene', text:'Back to Hallway', sceneId:'Hallway', cssClass:'arrow-right', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+      {
+        id: 'library', title: 'Library', panorama: '../routes/floor 2/Library.jpg',
+        hotSpots: [
+          { pitch:-5, yaw:-170, type:'scene', text:'Back to Corridor', sceneId:'Corridor', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+      {
+        id: 'clinic', title: 'Clinic', panorama: '../routes/floor 2/CLINIC.jpg',
+        hotSpots: [
+          { pitch:-5, yaw:-280, type:'scene', text:'Back to Hallway', sceneId:'floor2Hall', cssClass:'arrow-left', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+      {
+        id: 'AVR', title: 'AVR', panorama: '../routes/floor 2/AVR.jpg',
+        hotSpots: [
+          { pitch:5, yaw:-195, type:'scene', text:'Back to Corridor', sceneId:'Corridor', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
+        ]
+      },
+      {
+        id: 'mockHotel', title: 'Mock Hotel', panorama: '../routes/floor 2/mock_hotel.jpg',
+        hotSpots: [
+          { pitch:-5, yaw:-118, type:'scene', text:'Back to Hallway', sceneId:'Hallway', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
         ]
       },
       {
@@ -134,9 +180,9 @@ document.addEventListener("DOMContentLoaded", () => {
         hotSpots: [
           { pitch:-10, yaw:-83, type:'scene', text:'Go to Left Hallway', sceneId:'floor3LeftHallway', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
           { pitch:-20, yaw: 187, type:'scene', text:'Back to Floor 3 Landing', sceneId:'floor3', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
-          { pitch: 8, yaw: 293, type: 'info', text: 'Room 303' },
+          { pitch: 8, yaw: 293, type: 'info', text: 'Room 303\n40 Students Capacity\n Glass Board\nAir Conditioned' },
           { pitch: 0, yaw: 293, type:'scene', text:'Go to Room 303', sceneId:'Room303', cssClass:'arrow-right', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
-          { pitch: 9, yaw: 255, type: 'info', text: 'Room 304' },
+          { pitch: 9, yaw: 255, type: 'info', text: 'Room 304 \n30 Students Capacity\nGlass Board\nAir Conditioned ' },
           { pitch: 0, yaw:255, type:'scene', text:'Go to Room 304', sceneId:'Room304', cssClass:'arrow-left', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
           { pitch: 35, yaw: 380, type: 'info', text: 'Room 305' },
           { pitch: 0, yaw:380, type:'scene', text:'Go to Room 305', sceneId:'Room305', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
@@ -145,7 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         id: 'floor3LeftHallway', title: 'Floor 3 Left Hallway', panorama: '../routes/floor 3/2.jpg',
         hotSpots: [
-          { pitch: 35, yaw: 72, type: 'info', text: 'Room 301' },
+          { pitch: 35, yaw: 72, type: 'info', text: 'Room 301\n40 Students Capacity\n Glass Board\nAir Conditioned' },
           { pitch:10, yaw:72, type:'scene', text:'Go to Room 301', sceneId:'Room301', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
           { pitch:-9, yaw:173, type:'scene', text:'Go to Middle Hallway', sceneId:'floor3MiddleHallway', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
         ]
@@ -224,11 +270,11 @@ document.addEventListener("DOMContentLoaded", () => {
           { pitch:-10, yaw:5, type:'scene', text:'Go Back to Main Hallway', sceneId:'floor4MainHallway', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
           { pitch:-5, yaw:95, type:'scene', text:'Go to Left Hallway', sceneId:'floor4LeftHallway', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
           { pitch:-10, yaw:-80, type:'scene', text:'Go to Right Hallway', sceneId:'floor4RightHallway', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
-          { pitch: 10, yaw: -47, type: 'info', text: 'Aquarium' },
+          { pitch: 10, yaw: -47, type: 'info', text: 'Aquarium\n30 Students Capacity\n Smart TV\nWhite Board\nAir Conditioning' },
           { pitch:-10, yaw:-47, type:'scene', text:'Go to Aquarium', sceneId:'Aquarium', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
-          { pitch: 10, yaw: 30, type: 'info', text: 'Speech Laboratory' },
+          { pitch: 10, yaw: 30, type: 'info', text: 'Speech Laboratory\n30 Students Capacity\nWhite Board\nProjector\nAir Conditioning' },
           { pitch:-10, yaw:30, type:'scene', text:'Go to Speech Lab', sceneId:'SpeechLab', cssClass:'arrow-right', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
-          { pitch: 35, yaw: 200, type: 'info', text: 'Computer Laboratory 3' },
+          { pitch: 35, yaw: 200, type: 'info', text: 'Computer Laboratory 3\n40 Students Capacity\nWhite Board\nSmart TV\nAir Conditioning' },
           { pitch: 0, yaw:200, type:'scene', text:'Go to Com Lab 3', sceneId:'ComLab3', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
         ]
       },
@@ -242,7 +288,7 @@ document.addEventListener("DOMContentLoaded", () => {
         id: 'floor4RightHallway', title: 'Floor 4 Right Hallway', panorama: '../routes/floor 4/3.jpg',
         hotSpots: [
           { pitch:-10, yaw:205, type:'scene', text:'Go Back to Middle Hallway', sceneId:'floor4MiddleHallway', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' },
-          { pitch: 20, yaw: 50, type: 'info', text: 'Room 402' },
+          { pitch: 20, yaw: 50, type: 'info', text: 'Room 402\n40 Students Capacity\nGlass Board\nSmart TV\nAir Conditioning' },
           { pitch:-5, yaw:51, type:'scene', text:'Go to Room 402', sceneId:'Room402', cssClass:'arrow-up', targetYaw:'same', targetPitch:'same', targetHfov:'same' }
         ]
       },
@@ -370,7 +416,7 @@ document.addEventListener("DOMContentLoaded", () => {
           firstScene: locations[locationSelect.value][0].id,
           sceneFadeDuration: 800,
           autoLoad: true,
-          showControls: true
+          showControls: false,
         },
         scenes: {}
       };
@@ -382,7 +428,7 @@ document.addEventListener("DOMContentLoaded", () => {
             title:     sc.title,
             type:      'equirectangular',
             panorama:  sc.panorama,
-            hotSpots:  sc.hotSpots
+            hotSpots:  sc.hotSpots,
           };
         });
       }
@@ -392,7 +438,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       viewer.on('scenechange', () => {
         const current = viewer.getScene();
-        const locKey  = sceneToLocation[current]; 
+        const locKey  = sceneToLocation[current];
 
         if (locationSelect.value !== locKey) {
           locationSelect.value = locKey;
