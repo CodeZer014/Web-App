@@ -24,6 +24,13 @@
         <img src="images/STI_logo.png" />
         <span>STI COLLEGE MALOLOS</span>
       </div>
+      <!-- Hamburger button -->
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
       <div class="nav-links">
         <a href="#" class="active">Home</a>
 
@@ -37,6 +44,15 @@
         </div>
     
         <a href="#" id="virtualTourBtn">Virtual Tour</a>
+
+        <div class="dropdown contact-dropdown-mobile">
+          <a href="#contact" class="contact-mobile dropbtn">Contact Us</a>
+          <div class="dropdown-content">
+            <span>Location: McArthur Highway, Dakila,
+              Malolos, Philippines</span>
+            <span>Number: (044) 791 3451</span>
+          </div>
+        </div>
       </div>  
       
       <div class="dropdown" id="contactDropdown">
@@ -92,19 +108,26 @@
         </div>
       </div>
 
-  <div class="sidebar" id="sidebar">
-    <div class="sidebar-content">
-      <h2 class="sidebar-title">FLOOR</h2>
-      <div class="sidebar-buttons">
-        <button class="sidebar-btn">BASEMENT</button>
-        <button class="sidebar-btn">FLR 1</button>
-        <button class="sidebar-btn">FLR 2</button>
-        <button class="sidebar-btn">FLR 3</button>
-        <button class="sidebar-btn">FLR 4</button>
-        <button class="sidebar-btn">FLR 5</button>
+      <!-- Responsive Map for Mobile Only -->
+      <div id="mapMobile" class="map-mobile-view" hidden>
+        <h3 id="mapMobileTitle">Map View</h3>
+        <img id="mapMobileImage" src="" alt="Map layout (responsive)">
+        <div id="mapHotspotsContainer" style="position:absolute; top:0; left:0; width:100%; height:100%;"></div>
+      </div>
+
+    <div class="sidebar" id="sidebar">
+      <div class="sidebar-content">
+        <h2 class="sidebar-title">FLOOR</h2>
+        <div class="sidebar-buttons">
+          <button class="sidebar-btn">BASEMENT</button>
+          <button class="sidebar-btn">FLR 1</button>
+          <button class="sidebar-btn">FLR 2</button>
+          <button class="sidebar-btn">FLR 3</button>
+          <button class="sidebar-btn">FLR 4</button>
+          <button class="sidebar-btn">FLR 5</button>
+        </div>
       </div>
     </div>
-  </div>
 
   <button class="floating-btn" id="toggleSidebarBtn">
     <img src="images/button1.png" alt="Arrow" />
@@ -114,6 +137,20 @@
 
   <div class="bottom-curve"></div>
 
+  <script>
+    document.querySelectorAll('.contact-dropdown-mobile .dropbtn')
+    .forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const parent = btn.closest('.contact-dropdown-mobile');
+        parent.classList.toggle('active');
+      });
+    });
+    document.querySelector('.hamburger')
+      .addEventListener('click', () => {
+        document.querySelector('nav').classList.toggle('open');
+      });
+  </script>
   <script src="/script/app.js"></script>
   <script src="/script/sidebar-funtion.js"></script>
   <script src="/script/virtualTour-function.js"></script>

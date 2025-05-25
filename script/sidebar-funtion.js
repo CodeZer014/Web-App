@@ -28,6 +28,26 @@ document.addEventListener("DOMContentLoaded", () => {
         imgEl.src = `images/maps/${level}.png`;
         imgEl.alt = `${btn.textContent.trim()} map`;
 
+        if (window.innerWidth <= 768) {
+          const mobileView = document.getElementById('mapMobile');
+          const mobileTitle = document.getElementById('mapMobileTitle');
+          const mobileImage = document.getElementById('mapMobileImage');
+
+          if (currentBtn === btn && mobileView.style.display === 'flex') {
+            mobileView.style.display = 'none';
+            mobileView.style.visibility = 'hidden';
+            btn.classList.remove('active');
+            currentBtn = null;
+          } else {
+          mobileTitle.textContent = btn.textContent.trim();
+          mobileImage.src = `images/maps/${level}.png`;
+          mobileImage.alt = `${btn.textContent.trim()} map`;
+          
+          mobileView.style.display = 'flex';
+          mobileView.style.visibility = 'visible';
+          }
+        }
+
         const mapHotspotsContainer = document.getElementById('mapHotspotsContainer');
         mapHotspotsContainer.innerHTML = '';
 
