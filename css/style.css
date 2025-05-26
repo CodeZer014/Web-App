@@ -373,7 +373,8 @@
     color: #000;
   }
   .pnlm-hotspot-base.arrow-right::before {
-    content: "\27A1";
+    content: "\2B05";
+    transform: rotate(180deg);
     font-size: 16px;
     color: #000;
   }
