@@ -436,6 +436,11 @@ document.addEventListener("DOMContentLoaded", () => {
       // Initialize Pannellum
       viewer = pannellum.viewer('streetViewPanorama', pannellumConfig);
 
+      twemoji.parse(document.querySelector('#streetViewPanorama'), {
+        folder: 'svg',
+        ext: '.svg'
+      });
+
       viewer.on('scenechange', () => {
         const current = viewer.getScene();
         const locKey  = sceneToLocation[current];
