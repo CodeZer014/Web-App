@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
 
   <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+  <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="hero">
@@ -149,7 +150,12 @@
     document.querySelector('.hamburger')
       .addEventListener('click', () => {
         document.querySelector('nav').classList.toggle('open');
-      });
+    });
+    const container = document.getElementById('mapHotspotsContainer');
+    twemoji.parse(container, {
+      folder: 'svg',
+      ext: '.svg'
+    });
   </script>
   <script src="/script/app.js"></script>
   <script src="/script/sidebar-funtion.js"></script>
