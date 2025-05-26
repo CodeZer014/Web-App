@@ -330,6 +330,17 @@
     padding: 4px;
   }
 
+.pnlm-hotspot-base {
+  /* try emoji‑capable fonts first */
+  font-family: 
+    "Segoe UI Emoji", 
+    "Apple Color Emoji", 
+    "Noto Color Emoji", 
+    sans-serif;
+  font-size: 16px;  /* adjust */
+  line-height: 1;
+}
+
   /* Arrow hotspots section */
   .pnlm-hotspot-base.arrow-up,
   .pnlm-hotspot-base.arrow-down,
