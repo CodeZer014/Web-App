@@ -358,7 +358,7 @@
   }
   
   .pnlm-hotspot-base.arrow-up::before {
-    content: "🡹";
+    content: "\1F839";
     font-size: 16px;
     color: #000;
   }
