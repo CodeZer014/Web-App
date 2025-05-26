@@ -363,17 +363,17 @@
     color: #000;
   }
   .pnlm-hotspot-base.arrow-down::before {
-    content: "🡻";
+    content: "\2B07";
     font-size: 16px;
     color: #000;
   }
   .pnlm-hotspot-base.arrow-left::before {
-    content: "🡸";
+    content: "\2B05";
     font-size: 16px;
     color: #000;
   }
   .pnlm-hotspot-base.arrow-right::before {
-    content: "🡺";
+    content: "\27A1";
     font-size: 16px;
     color: #000;
   }
